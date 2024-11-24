@@ -22,3 +22,8 @@ Content-Type: application/json
   "owner": "Kevin",
   "content": "Hello World..."
 }
+
+###
+
+GET http://localhost:3000/posts/6734b0c818a1cf8344804554
+
