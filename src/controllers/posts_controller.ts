@@ -1,10 +1,20 @@
 import { postModel } from "../models/posts_model";
 
-export const getAllPosts = async (req: any, res: any) => {
+export const getPosts = async (req: any, res: any) => {
     try {
-        // const posts = await PostModel.find();
-        // res.send(posts);
-        res.send("Get All Posts");
+        // const { sender } = req.query; // Check for query parameter
+
+        // // If sender is provided, filter posts by sender
+        // if (sender) {
+        //     const posts = await postModel.find({ sender });
+        //     res.status(200).json(posts);
+        // } else {
+        //     // If no sender is provided, return all posts
+        //     const posts = await postModel.find();
+        //     res.status(200).json(posts);
+        // }
+
+        res.send("Get Posts");
     } catch (error: any) {
         res.status(400).send(error.message);
     }
