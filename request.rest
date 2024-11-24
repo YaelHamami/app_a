@@ -1,8 +1,12 @@
-###
+### Get all posts
 
 GET http://localhost:3000/posts
 
-###
+### Get all posts of sender
+
+GET http://localhost:3000/posts?sender=Kevin
+
+### Create post
 POST http://localhost:3000/posts
 Content-Type: application/json
 
@@ -12,7 +16,7 @@ Content-Type: application/json
   "content": "Hello World..."
 }
 
-###
+### Update post
 
 PUT http://localhost:3000/posts/6734b0c818a1cf8344804554
 Content-Type: application/json

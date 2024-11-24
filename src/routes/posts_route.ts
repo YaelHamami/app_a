@@ -1,10 +1,10 @@
 import express from 'express';
 const app = express();
-import { getAllPosts, createPost, updatePost, getPostById } from "../controllers/posts_controller";
+import { getPosts, createPost, updatePost, getPostById } from "../controllers/posts_controller";
 export const postsRouter = express.Router();
 
-// Get All Posts
-postsRouter.get("/", getAllPosts);
+// Get Posts
+postsRouter.get("/", getPosts);
 
 // Create A Post
 postsRouter.post("/", createPost);
