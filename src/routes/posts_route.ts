@@ -1,13 +1,13 @@
-const express = require("express")
+import express from 'express';
 const app = express();
-const dotenv = require("dotenv").config();
-const router = express.Router();
-const port = process.env.PORT;
+import { createPost, updatePost } from "../controllers/posts_controller";
+export const postsRouter = express.Router();
 
-const postsController = require("../controllers/posts_controllers")
+// Get All Posts
+postsRouter.get("/", postsController.getAllPosts);
 
+// Create A Post
+postsRouter.post("/", createPost);
 
-router.get("/", postsController.getAllPosts);
-
-
-module.exports = router;
+// Update A Post
+postsRouter.put('/:id', updatePost);
