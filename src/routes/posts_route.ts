@@ -4,8 +4,10 @@ const dotenv = require("dotenv").config();
 const router = express.Router();
 const port = process.env.PORT;
 
-router.get("/", (req : any, res : any) => {
-    res.send("Get All Posts.");
-});
+const postsController = require("../controllers/posts_controllers")
+
+
+router.get("/", postsController.getAllPosts);
+
 
 module.exports = router;
