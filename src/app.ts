@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import dotenv from "dotenv";
+import { postsRouter } from './routes/posts_route';
 
 dotenv.config();
 const port = process.env.PORT;
@@ -16,8 +17,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // db.once("open", () => console.log("Connected to database"));
 
 // Routes
-// app.use('/posts', postRoutes);
+app.use('/posts', postsRouter);
 // app.use('/comments', commentRoutes);
+
 app.get('/', (req, res) => {
     res.send("hello world")
 })
