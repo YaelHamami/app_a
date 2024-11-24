@@ -41,3 +41,14 @@ export const updatePost = async (req: any, res: any) => {
         res.status(500).json({ error: err.message });
     }
 };
+
+export const getPostById = async (req: any, res: any) => {
+    try {
+        // const getPostById = await postModel.findById(req.params.id, req.body, { new: true });
+        // if (!getPostById) return res.status(404).json({ message: 'Post not found' });
+        // res.status(200).json(getPostById);
+        res.send("Get Post By Id");
+    } catch (err: any) {
+        res.status(500).json({ error: err.message });
+    }
+};
