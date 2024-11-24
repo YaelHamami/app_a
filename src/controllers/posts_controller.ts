@@ -10,6 +10,16 @@ export const createPost = async (req: any, res: any) => {
     }
 };
 
+// Get Posts by Sender
+export const getPostsBySenderId = async (req: any, res: any) => {
+    try {
+        const posts = await postModel.find({ sender: req.params.sender_id });
+        res.status(200).json(posts);
+    } catch (err: any) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
 export const updatePost = async (req: any, res: any) => {
     try {
         const updatedPost = await postModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
